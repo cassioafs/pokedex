@@ -1,0 +1,23 @@
+.bg-fogo {
+  background-color: rgb(237, 109, 18);
+}
+
+.bg-voador {
+  background-color: rgb(142, 111, 235);
+}
+
+.bg-veneno {
+  background-color: rgb(146, 58, 146);
+}
+
+.bg-psiquico {
+  background-color: rgb(247, 54, 112);
+}
+
+.bg-grama {
+  background-color: rgb(105, 194, 61);
+}
+
+.row {
+  margin-bottom: 8px;
+}
