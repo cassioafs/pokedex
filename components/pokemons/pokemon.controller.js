@@ -4,9 +4,7 @@
     function PokemonController (Pokemons, $stateParams){
         vm = this;
 
-        Pokemons.getById($stateParams.id).then(function(response){
-            vm.pokemon = response.data;
-        });
+        vm.pokemon = Pokemons.getById($stateParams.id)[0];
 
     };
 

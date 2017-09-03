@@ -4,10 +4,12 @@
     function PokemonsController (Pokemons){
         vm = this;
 
-        Pokemons.getAll().then(function(response){
-            vm.pokemons = response.data;
-        });
-
+        vm.pokemons = Pokemons.getAll();
+        vm.save = function (){
+            Pokemons.pokemons.push(vm.pokemon);
+            vm.pokemons = Pokemons.getAll();
+            $('#myModal').modal('hide');
+        }
     };
 
 })();

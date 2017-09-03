@@ -5,6 +5,12 @@
 
             <form role="form">
                 <div class="box-body">
+                    <div class="row margin-bottom">
+
+                        <div class="pull-right col-md-12 col-sm-12 col-lg-12">
+                            <a data-toggle="modal" data-target="#myModal" class="btn btn-success">Adicionar</a>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <input type="text" ng-model="PokemonsController.filtro" class="form-control" placeholder="Pesquisar...">
                     </div>
@@ -57,3 +63,84 @@
     </div>
 </section>
 <!-- /.content -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+                <h4 class="modal-title" id="myModalLabel">Adicionar Pokémon</h4>
+            </div>
+            <div class="modal-body">
+                <form novalidate name="pokeForm" ng-submit="PokemonsController.save()">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="id" class="control-label">Número</label>
+                                <input type="text" class="form-control" ng-model="PokemonsController.pokemon.id" name="id" />
+                            </div>
+                            <div class="form-group">
+                                <label for="image" class="control-label">Url da Imagem</label>
+                                <input type="text" class="form-control" ng-model="PokemonsController.pokemon.image" name="image" />
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="control-label">Nome</label>
+                                <input type="text" class="form-control" ng-model="PokemonsController.pokemon.name" name="name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="type1" class="control-label">Tipo 1</label>
+                                <select class="form-control" ng-model="PokemonsController.pokemon.type1" ng-init="PokemonsController.pokemon.type1 = 'grama'"
+                                    name="type1">
+                                    <option value="grama">Grama</option>
+                                    <option value="veneno">Veneno</option>
+                                    <option value="voador">Voador</option>
+                                    <option value="fogo">Fogo</option>
+                                    <option value="psiquico">Psiquico</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="type2" class="control-label">Tipo 2</label>
+                                <select class="form-control" ng-model="PokemonsController.pokemon.type2" ng-init="PokemonsController.pokemon.type2 = 'grama'"
+                                    name="type2">
+                                        <option value="grama">Grama</option>
+                                        <option value="veneno">Veneno</option>
+                                        <option value="voador">Voador</option>
+                                        <option value="fogo">Fogo</option>
+                                        <option value="psiquico">Psiquico</option>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="attack" class="control-label">Ataque</label>
+                                <input type="text" class="form-control" ng-model="PokemonsController.pokemon.attack" name="attack" />
+                            </div>
+                            <div class="form-group">
+                                <label for="defense" class="control-label">Defesa</label>
+                                <input type="text" class="form-control" ng-model="PokemonsController.pokemon.defense" name="defense" />
+                            </div>
+                            <div class="form-group">
+                                <label for="hp" class="control-label">HP</label>
+                                <input type="text" class="form-control" ng-model="PokemonsController.pokemon.hp" name="hp" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- div row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-success">Salvar</button>
+                                <button data-dismiss="modal" class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fim box-body -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
